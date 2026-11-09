@@ -5,7 +5,7 @@ export type Edition = { id: string; year: number; round: number; position: strin
 export type ExamDef = { id: string; name: string; short: string; color: string; scoring: 'percent'; idPattern: string; sections: { id: string; name: string }[]; bands: Band[]; editions: Edition[] };
 export type Catalog = { exams: ExamDef[] };
 export type Cand = { name: string; seq: number };
-export type Attempt = { id: string; examId: string; editionId: string; setId: string; mode: 'real' | 'practice'; answers: (number | null)[]; flags: number[]; startedAt: number; endAt: number | null; submittedAt?: number; summary?: { score: number; label: string; color: string } };
+export type Attempt = { id: string; examId: string; editionId: string; setId: string; mode: 'real' | 'practice'; answers: (number | null)[]; flags: number[]; lastIndex?: number; updatedAt?: number; startedAt: number; endAt: number | null; submittedAt?: number; summary?: { score: number; label: string; color: string } };
 
 export const SOON = ['ก.พ. ภาค ก', 'ภาค ข', 'IELTS', 'TOEIC'];
 export const SRC: Record<string, string> = { original: 'แต่งขึ้นเอง', recalled: 'จากความทรงจำผู้สอบ', official: 'ทางการ' };
@@ -19,11 +19,51 @@ export function useEd(p: { exam?: string; edition?: string }) {
 }
 export function load<T>(k: string, d: T): T { try { return JSON.parse(localStorage.getItem(k) || '') as T; } catch { return d; } }
 export const save = (k: string, v: unknown) => localStorage.setItem(k, JSON.stringify(v));
+
+// ---- จำแคชข้อมูลผู้สมัครสอบ (กรอกครั้งเดียวจำตลอด ไม่ต้องสมัครใหม่ทุกครั้ง) ----
+export function loadCand(examId: string, editionId: string): Cand | null {
+  const key = `ep_cand_${examId}_${editionId}`;
+  const existing = load<Cand | null>(key, null);
+  if (existing?.name) return existing;
+  const globalCand = load<Cand | null>('ep_cand_profile', null);
+  if (globalCand?.name) {
+    save(key, globalCand);
+    return globalCand;
+  }
+  return null;
+}
+
+export function saveCand(examId: string, editionId: string, cand: Cand) {
+  save(`ep_cand_${examId}_${editionId}`, cand);
+  save('ep_cand_profile', cand);
+}
+
+// ---- ประวัติการสอบที่ส่งแล้ว และข้อสอบที่ทำค้างไว้ (Resume) ----
 export function getHistory(): Attempt[] {
   const out: Attempt[] = [];
   for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i)!; if (k.startsWith('ep_att_')) { const a = load<Attempt | null>(k, null); if (a?.submittedAt) out.push(a); } }
   return out.sort((a, b) => b.submittedAt! - a.submittedAt!);
 }
+
+export function getInProgressAttempts(): Attempt[] {
+  const out: Attempt[] = [];
+  const now = Date.now();
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i)!;
+    if (k.startsWith('ep_att_')) {
+      const a = load<Attempt | null>(k, null);
+      if (a && !a.submittedAt && (a.endAt === null || a.endAt > now)) {
+        out.push(a);
+      }
+    }
+  }
+  return out.sort((a, b) => (b.updatedAt || b.startedAt) - (a.updatedAt || a.startedAt));
+}
+
+export function findInProgressAttempt(examId: string, editionId: string, setId: string): Attempt | null {
+  return getInProgressAttempts().find(a => a.examId === examId && a.editionId === editionId && a.setId === setId) || null;
+}
+
 export const mmss = (s: number) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 
 // ---- รหัสผู้เข้าสอบและรายชื่อสมมติ ----

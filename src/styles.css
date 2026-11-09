@@ -107,23 +107,20 @@ main {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  overflow: hidden;
   border-radius: 10px;
 }
 
 .logo-img {
-  height: 54px;
+  height: 52px;
   width: auto;
   display: block;
   object-fit: contain;
   mix-blend-mode: multiply;
-  transform: scale(1.22);
-  transform-origin: left center;
   transition: transform 0.2s ease;
 }
 
 .logo:hover .logo-img {
-  transform: scale(1.26);
+  transform: scale(1.03);
 }
 
 nav {
@@ -1056,4 +1053,297 @@ pre {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* Auth, Admin, Presence & Monetization UI */
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.online-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Prompt', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--gl);
+  color: var(--g-deep);
+  border: 1px solid #a7f3d0;
+}
+
+.online-pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--g);
+  box-shadow: 0 0 0 3px rgba(0, 184, 107, 0.22);
+}
+
+.account-link {
+  font-weight: 600 !important;
+  color: var(--b) !important;
+}
+
+.account-link.active {
+  color: #ffffff !important;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Prompt', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+}
+
+.status-pill.free {
+  background: var(--gl-2);
+  color: var(--g-deep);
+  border: 1px solid #6ee7b7;
+}
+
+.status-pill.pro {
+  background: var(--yl);
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.google-btn {
+  width: 100%;
+  background: #ffffff !important;
+  color: var(--navy) !important;
+  border: 1.5px solid var(--line-strong) !important;
+  box-shadow: var(--shadow-sm) !important;
+  margin-top: 8px;
+}
+
+.google-btn:hover:not(:disabled) {
+  border-color: var(--b) !important;
+  background: var(--bl) !important;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 18px 0 12px;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--line);
+}
+
+.divider span {
+  padding: 0 12px;
+}
+
+.user-badge-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--b) 100%);
+  color: #ffffff;
+  font: 700 24px 'Prompt', sans-serif;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--b);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card small {
+  display: block;
+  font-family: 'Prompt', sans-serif;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.stat-card strong {
+  display: block;
+  font: 700 28px 'Prompt', sans-serif;
+  color: var(--navy);
+  margin: 4px 0 2px;
+}
+
+.stat-card span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.vip-form {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr auto;
+  gap: 10px;
+  align-items: center;
+  margin: 14px 0 16px;
+}
+
+.vip-form input {
+  margin-top: 0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(6, 33, 77, 0.55);
+  backdrop-filter: blur(6px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 28px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--line);
+}
+
+.price-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 18px;
+  background: var(--bl);
+  border: 1px solid #93c5fd;
+  border-radius: var(--radius-sm);
+}
+
+.price-box span {
+  display: block;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.price-box strong {
+  font: 700 24px 'Prompt', sans-serif;
+  color: var(--b);
+}
+
+@media (max-width: 720px) {
+  .vip-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3-Tier Freemium Strip & Incentive UI */
+.tier-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.tier-box {
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.tier-box.active {
+  border-color: var(--b);
+  background: linear-gradient(180deg, var(--bl) 0%, #ffffff 100%);
+  box-shadow: 0 8px 20px -6px rgba(0, 102, 235, 0.16);
+}
+
+.tier-tag {
+  display: inline-block;
+  font: 600 11.5px 'Prompt', sans-serif;
+  letter-spacing: 0.04em;
+  color: var(--b);
+  background: rgba(0, 102, 235, 0.1);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.tier-box strong {
+  display: block;
+  font: 700 17px 'Prompt', sans-serif;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.tier-box p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.tier-link {
+  display: inline-block;
+  margin-top: 8px;
+  font: 600 13.5px 'Prompt', sans-serif;
+  color: var(--b);
+  text-decoration: none;
+}
+
+.tier-link:hover {
+  text-decoration: underline;
+}
+
+.incentive-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--bl) 0%, var(--gl) 100%);
+  border: 1px solid #93c5fd;
+  border-left: 5px solid var(--b);
+  margin: 12px 0 16px;
+  font-size: 14.5px;
+  color: var(--navy);
+}
+
+.nums .locked-num {
+  background: #f1f5f9;
+  color: #94a3b8;
+  border-style: dashed;
+  font-size: 12px;
 }
