@@ -1,0 +1,4 @@
+{ "year": 2567, "round": 1, "position": "ตำแหน่งตัวอย่าง (แก้ตามประกาศรับสมัครจริง)", "positionCode": "A",
+  "durationMinutes": 10, "passScore": 60, "sectionWeights": { "general": 40, "english": 20, "job": 40 },
+  "minPerSection": { "english": 30 }, "source": "original", "sets": ["set-1"],
+  "notes": "ชุดตัวอย่างที่แต่งขึ้นเพื่อทดสอบระบบ ไม่ใช่ข้อสอบจริง ค่าเกณฑ์เป็นตัวอย่าง" }

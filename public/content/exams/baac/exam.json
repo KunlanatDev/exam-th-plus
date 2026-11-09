@@ -1,0 +1,15 @@
+{ "id": "baac", "name": "ข้อสอบจำลอง ธ.ก.ส.", "short": "ธ.ก.ส.", "color": "#0e7c4a", "scoring": "percent",
+  "idPattern": "{year}{position}{seq:5}",
+  "sections": [
+    { "id": "general", "name": "ความสามารถทั่วไป" },
+    { "id": "english", "name": "ภาษาอังกฤษ" },
+    { "id": "accuracy", "name": "ความละเอียดแม่นยำ" },
+    { "id": "job", "name": "ความรู้เฉพาะตำแหน่ง" }
+  ],
+  "bands": [
+    { "id": "excellent", "label": "ยอดเยี่ยม", "minPassRatio": 1.25, "color": "#0a6b3d" },
+    { "id": "great", "label": "ดีเยี่ยม", "minPassRatio": 1.10, "color": "#22a05b" },
+    { "id": "fair", "label": "พอใช้ (ใกล้เกณฑ์)", "minPassRatio": 0.95, "color": "#e0a800" },
+    { "id": "improve", "label": "ต้องปรับปรุง", "minPassRatio": 0.80, "color": "#e8741a" },
+    { "id": "basic", "label": "ควรทวนพื้นฐาน", "minPassRatio": 0, "color": "#d64545" }
+  ] }

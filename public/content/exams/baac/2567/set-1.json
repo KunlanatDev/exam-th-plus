@@ -1,0 +1,120 @@
+{
+    "id": "set-1",
+    "title": "ชุดที่ 1 (ตัวอย่าง)",
+    "questions": [
+        {
+            "id": "baac-2567-s1-q001",
+            "section": "general",
+            "topics": [
+                "อนุกรม"
+            ],
+            "difficulty": 2,
+            "type": "mcq",
+            "stem": "3, 7, 15, 31, ?",
+            "choices": [
+                "47",
+                "55",
+                "63",
+                "65"
+            ],
+            "answer": 2,
+            "explanation": "แต่ละตัวเท่ากับตัวก่อนหน้า × 2 + 1 จึงได้ 31 × 2 + 1 = 63",
+            "review": "อนุกรมที่มีทั้งคูณและบวก"
+        },
+        {
+            "id": "baac-2567-s1-q002",
+            "section": "general",
+            "topics": [
+                "ร้อยละ"
+            ],
+            "difficulty": 1,
+            "type": "mcq",
+            "stem": "ข้าวสารราคา 1,200 บาท ลด 25% ต้องจ่ายกี่บาท",
+            "choices": [
+                "300",
+                "900",
+                "950",
+                "1,000"
+            ],
+            "answer": 1,
+            "explanation": "ลด 25% คือ 300 บาท จึงจ่าย 1,200 − 300 = 900 บาท",
+            "review": "ร้อยละและส่วนลด"
+        },
+        {
+            "id": "baac-2567-s1-q003",
+            "section": "english",
+            "topics": [
+                "Conditionals"
+            ],
+            "difficulty": 2,
+            "type": "mcq",
+            "stem": "If it ___ tomorrow, we will cancel the trip.",
+            "choices": [
+                "rains",
+                "rain",
+                "will rain",
+                "rained"
+            ],
+            "answer": 0,
+            "explanation": "ประโยค if-clause ชนิดที่ 1 ใช้ Present Simple ในส่วน if และ will ในส่วนผลลัพธ์",
+            "review": "First Conditional"
+        },
+        {
+            "id": "baac-2567-s1-q004",
+            "section": "english",
+            "topics": [
+                "Vocabulary"
+            ],
+            "difficulty": 1,
+            "type": "mcq",
+            "stem": "Choose the word closest in meaning to 'reduce'.",
+            "choices": [
+                "decrease",
+                "expand",
+                "collect",
+                "repair"
+            ],
+            "answer": 0,
+            "explanation": "reduce แปลว่า ลดลง ตรงกับ decrease",
+            "review": "คำศัพท์ความหมายใกล้เคียง"
+        },
+        {
+            "id": "baac-2567-s1-q005",
+            "section": "job",
+            "topics": [
+                "การเงินครัวเรือน"
+            ],
+            "difficulty": 1,
+            "type": "mcq",
+            "stem": "ประโยชน์หลักของการทำบัญชีรับ-จ่ายครัวเรือนของเกษตรกรคือข้อใด",
+            "choices": [
+                "ทราบรายได้ รายจ่าย และวางแผนการเงินได้",
+                "หลีกเลี่ยงภาษีทั้งหมด",
+                "ทำให้ราคาผลผลิตสูงขึ้นเอง",
+                "ลดปริมาณผลผลิต"
+            ],
+            "answer": 0,
+            "explanation": "บัญชีรับ-จ่ายช่วยให้เห็นรายได้และต้นทุนจริง ใช้วางแผนการเงินและตัดสินใจลงทุนได้",
+            "review": "บัญชีครัวเรือน"
+        },
+        {
+            "id": "baac-2567-s1-q006",
+            "section": "job",
+            "topics": [
+                "การเกษตร"
+            ],
+            "difficulty": 2,
+            "type": "mcq",
+            "stem": "การปลูกพืชหมุนเวียนช่วยในข้อใดเป็นหลัก",
+            "choices": [
+                "ลดการสะสมของโรคและแมลง และช่วยบำรุงดิน",
+                "เพิ่มปริมาณน้ำฝน",
+                "ทำให้ไม่ต้องไถดิน",
+                "ลดจำนวนวันในหนึ่งปี"
+            ],
+            "answer": 0,
+            "explanation": "การสลับชนิดพืชตัดวงจรศัตรูพืชเฉพาะชนิด และพืชแต่ละชนิดใช้/คืนธาตุอาหารต่างกัน",
+            "review": "การจัดการดิน"
+        }
+    ]
+}
