@@ -9,13 +9,27 @@ export function Home() {
   return (
     <>
       <section className="hero">
-        <div className="hero-badge">✨ แพลตฟอร์มฝึกซ้อมสอบออนไลน์</div>
-        <h1>ซ้อมสอบเสมือนจริง<br />ตั้งแต่สมัครจนรู้ผล</h1>
-        <p>จำลองครบทุกขั้นตอน ตั้งแต่ลงทะเบียน ประกาศรายชื่อ ออกบัตรประจำตัวสอบ จับเวลาทำข้อสอบ ไปจนถึงวิเคราะห์จุดอ่อนรายหมวด</p>
-        <div className="hero-pills">
-          <span className="hero-pill">⏱️ จับเวลาจริง</span>
-          <span className="hero-pill">📊 วิเคราะห์คะแนนรายหมวด</span>
-          <span className="hero-pill">💡 เฉลยละเอียดทุกข้อ</span>
+        <div className="hero-content">
+          <div className="hero-badge">🎓 LEARN • PRACTICE • PASS</div>
+          <h1>ซ้อมสอบเสมือนจริง<br /><span>ตั้งแต่สมัครจนรู้ผล</span></h1>
+          <p>เตรียมความพร้อมด้วยระบบจำลองการสอบครบวงจร ตั้งแต่ลงทะเบียน ออกบัตรประจำตัวสอบ จับเวลาทำข้อสอบจริง ไปจนถึงวิเคราะห์จุดอ่อนรายหมวดวิชา</p>
+          <div className="hero-pills">
+            <span className="hero-pill">⏱️ จับเวลาเสมือนจริง</span>
+            <span className="hero-pill">📊 วิเคราะห์คะแนนรายหมวด</span>
+            <span className="hero-pill">✅ เฉลยละเอียดทุกข้อ</span>
+          </div>
+        </div>
+        <div className="hero-card" aria-hidden="true">
+          <div className="hero-card-title">
+            <span>ขั้นตอนการซ้อมสอบ</span>
+            <span style={{ color: '#34d399' }}>ExamTHPlus</span>
+          </div>
+          <div className="hero-steps">
+            <div className="hero-step"><i>1</i><span>ลงทะเบียนสมัครสอบจำลอง</span></div>
+            <div className="hero-step"><i>2</i><span>ตรวจรายชื่อ & ห้องสอบ</span></div>
+            <div className="hero-step"><i>3</i><span>รับบัตรประจำตัวผู้เข้าสอบ</span></div>
+            <div className="hero-step"><i>✓</i><span>เข้าห้องสอบ & ดูผลวิเคราะห์</span></div>
+          </div>
         </div>
       </section>
 
@@ -28,7 +42,7 @@ export function Home() {
       {last?.summary && (
         <Link to={`/attempt/${last.id}/result`} className="recent-banner">
           <div>
-            <small style={{ color: '#047857', fontWeight: 600 }}>ผลการสอบล่าสุดของคุณ</small>
+            <small style={{ color: '#0066eb', fontWeight: 600 }}>ผลการสอบล่าสุดของคุณ</small>
             <div style={{ fontWeight: 700, fontSize: '17px' }}>{last.summary.label} · ได้ {last.summary.score} คะแนน</div>
           </div>
           <span className="btn ghost" style={{ padding: '6px 14px', fontSize: '14px' }}>ดูผลวิเคราะห์ →</span>
